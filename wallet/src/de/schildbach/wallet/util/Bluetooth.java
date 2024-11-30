@@ -76,6 +76,9 @@ public class Bluetooth {
         } catch (final InvocationTargetException x) {
             log.info("Problem determining Bluetooth MAC via reflection", x);
             return null;
+        } catch (final NoSuchMethodException x){
++            log.info("Problem determining Bluetooth MAC via reflection", x);
++            return null;
         } catch (final Exception x) {
             throw new RuntimeException(x);
         }
